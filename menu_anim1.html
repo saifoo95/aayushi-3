@@ -1,0 +1,115 @@
+<html>
+
+<head>
+<style>
+.menu-bar{
+  position: fixed;
+  top: 20px; 
+  background-color: #3333;
+  z-index: 100;
+  width: 100%;
+  height: 80px;
+  box-shadow: 0px 1.5px 8px gray;
+}
+
+.menu{
+  background-color: #3333;
+  z-index: 90;
+  width: 0px;
+  height: 0px;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  opacity: 0;
+  transition: 1s;
+  		transition-timing-function: ease-in;
+}
+
+.menu_page {
+  background-color: #3333;
+  z-index: 90;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  transition: 1s;
+  		transition-timing-function: ease-in;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.logo{
+  background-color: white;
+  height: 105%;
+  width: 200px;
+  z-index: 200;
+  box-shadow: 0.5px 1px 15px #F7B400;
+  position: absolute;
+  left: 70px;
+  -ms-transform: translate(50px, 100px); /* IE 9 */
+  -webkit-transform: translate(0px, -3px); /* Safari */
+  transform: translate(0px, -3px);
+}
+
+.menu-icon-container {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right: 50px;
+  top: 18px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 2.5px;
+  background-color: #F7B400;
+  margin: 9px 0px;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+
+<body style="background-color: white; margin: 0px; height: 200vh">
+	<div class="menu" >
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="menu-bar">
+		<div class="menu-icon-container" onclick="menu_anime(this)">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+		<div class="logo">
+		
+		</div>
+	</div>
+	
+<script>
+function menu_anime(menu_icon_container) {
+  menu_icon_container.classList.toggle("change");
+  $(".menu").toggleClass("menu_page");
+}
+</script>
+</body>
+
+</html>
